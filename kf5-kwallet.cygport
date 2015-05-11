@@ -1,0 +1,33 @@
+inherit kf5
+
+NAME="kf5-kwallet"
+VERSION=5.10.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 password storage library"
+DESCRIPTION="This framework contains KWallet, the safe desktop-wide storage for
+passwords on KDE work spaces."
+
+PATCH_URI="5.10.0-cygwin-compile.patch"
+
+PKG_NAMES="libKF5Wallet5 libKF5Wallet-devel"
+libKF5Wallet5_CONTENTS="
+	usr/bin/cygKF5Wallet-5.dll
+	usr/bin/cygkwalletbackend5-5.dll
+	usr/bin/kwalletd5.exe
+	usr/share/dbus-1/services/
+	usr/share/doc/
+	usr/share/knotifications5/
+	usr/share/kservices5/
+	usr/share/locale/
+"
+libKF5Wallet_devel_REQUIRES="libKF5Config-devel libKF5WindowSystem-devel libQt5Core-devel libQt5Gui-devel"
+libKF5Wallet_devel_CONTENTS="
+	usr/include/KF5/KWallet/
+	usr/include/KF5/kwallet_version.h
+	usr/lib/cmake/KF5Wallet/
+	${QT5_MKSPECSDIR#/}/modules/qt_KWallet.pri
+	usr/lib/libKF5Wallet.dll.a
+	usr/lib/libkwalletbackend5.dll.a
+	usr/share/dbus-1/interfaces/
+"

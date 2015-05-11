@@ -1,0 +1,42 @@
+--- origsrc/kwallet-5.10.0/src/runtime/kwalletd/backend/blowfish.cc	2015-05-03 10:25:03.000000000 -0500
++++ src/kwallet-5.10.0/src/runtime/kwalletd/backend/blowfish.cc	2015-05-11 11:49:40.460447100 -0500
+@@ -23,14 +23,15 @@
+  * _Applied_Cryptography_ (c) Bruce Schneier, 1996.
+  */
+ 
+-#include "blowfish.h"
+-
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
++#include <QtCore/qglobal.h> /* For Q_BYTE_ORDER etc. */
+ 
++#include "blowfish.h"
+ #include "blowfishtables.h"
+ 
++
+ BlowFish::BlowFish()
+ {
+     _blksz = 8;
+--- origsrc/kwallet-5.10.0/src/runtime/kwalletd/backend/blowfish.h	2015-05-03 10:25:03.000000000 -0500
++++ src/kwallet-5.10.0/src/runtime/kwalletd/backend/blowfish.h	2015-05-11 11:39:51.241625800 -0500
+@@ -54,6 +54,8 @@ public:
+     virtual int decrypt(void *block, int len);
+ 
+ private:
++#undef _S
++#undef _P
+     uint32_t _S[4][256];
+     uint32_t _P[18];
+ 
+--- origsrc/kwallet-5.10.0/src/runtime/kwalletd/backend/sha1.cc	2015-05-03 10:25:03.000000000 -0500
++++ src/kwallet-5.10.0/src/runtime/kwalletd/backend/sha1.cc	2015-05-11 11:48:31.613204600 -0500
+@@ -31,6 +31,8 @@
+ 
+ #include <string.h>
+ 
++#include <QtCore/qglobal.h> /* For Q_BYTE_ORDER etc. */
++
+ // FIXME: this can be optimized to one instruction on most cpus.
+ #define rol(x,y) ((x << y) | (x >> (32-y)))
+ 
