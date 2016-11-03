@@ -1,14 +1,14 @@
 inherit kf5
 
 NAME="kf5-kwallet"
-VERSION=5.12.0
+VERSION=5.27.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="KDE 5 password storage library"
 DESCRIPTION="This framework contains KWallet, the safe desktop-wide storage for
 passwords on KDE work spaces."
 
-PATCH_URI="5.10.0-cygwin-compile.patch"
+PATCH_URI="5.27.0-cygwin-compile.patch"
 
 PKG_NAMES="libKF5Wallet5 libKF5Wallet-devel"
 libKF5Wallet5_CONTENTS="

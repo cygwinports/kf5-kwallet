@@ -1,0 +1,11 @@
+--- origsrc/kwallet-5.27.0/src/runtime/kwalletd/backend/blowfish.h	2016-10-02 05:00:59.000000000 -0500
++++ src/kwallet-5.27.0/src/runtime/kwalletd/backend/blowfish.h	2016-11-01 22:03:52.676837800 -0500
+@@ -54,6 +54,8 @@ public:
+     virtual int decrypt(void *block, int len);
+ 
+ private:
++#undef _P
++#undef _S
+     uint32_t _S[4][256];
+     uint32_t _P[18];
+ 
