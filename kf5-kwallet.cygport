@@ -1,7 +1,7 @@
 inherit kf5
 
 NAME="kf5-kwallet"
-VERSION=5.39.0
+VERSION=5.43.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="KDE 5 password storage library"
@@ -12,6 +12,7 @@ PATCH_URI="5.27.0-cygwin-compile.patch"
 
 PKG_NAMES="libKF5Wallet5 libKF5Wallet-devel"
 libKF5Wallet5_CONTENTS="
+	etc/xdg/kwallet.categories
 	usr/bin/cygKF5Wallet-5.dll
 	usr/bin/cygkwalletbackend5-5.dll
 	usr/bin/kwallet-query.exe
